@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Master Challenge</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    input[type="number"] {
+      margin-top: 10px;
+      padding: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p#feedback {
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Math Master Challenge</h1>
+      <div id="problem"></div>
+      <input type="number" id="user-answer" placeholder="Your Answer" />
+      <button id="check-answer">Check Answer</button>
+      <p id="feedback"></p>
+      <button id="next-problem">Next Problem</button>
+    </div>
+    <script>
+      // Generate random addition problems
+      function generateProblem() {
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        return `${num1} + ${num2}`;
+      }
+
+      // Check if the user's answer is correct
+      function checkAnswer() {
+        const userAnswer = parseInt(
+          document.getElementById("user-answer").value
+        );
+        const correctAnswer = eval(
+          document.getElementById("problem").textContent
+        );
+        const feedback = document.getElementById("feedback");
+        if (userAnswer === correctAnswer) {
+          feedback.textContent = "Correct! Well done!";
+          feedback.style.color = "green";
+        } else {
+          feedback.textContent = "Incorrect. Try again!";
+          feedback.style.color = "red";
+        }
+      }
+
+      // Generate a new problem
+      function nextProblem() {
+        document.getElementById("user-answer").value = "";
+        document.getElementById("feedback").textContent = "";
+        document.getElementById("problem").textContent = generateProblem();
+      }
+
+      // Event listeners
+      document
+        .getElementById("check-answer")
+        .addEventListener("click", checkAnswer);
+      document
+        .getElementById("next-problem")
+        .addEventListener("click", nextProblem);
+
+      // Initialize the game
+      document.getElementById("problem").textContent = generateProblem();
+    </script>
+  </body>
+</html>

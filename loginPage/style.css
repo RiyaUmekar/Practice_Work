@@ -1,0 +1,106 @@
+body {
+  height: 675px;
+  background-color: aqua;
+  background: blue;
+  display: flex;
+  color: yellow;
+  align-items: center;
+  justify-content: center;
+  animation: backgroundIMG 0.1s;
+  animation-fill-mode: forwards;
+}
+@keyframes backgroundIMG {
+  100% {
+    background-image: linear-gradient(180deg, #2c0d26, #931927);
+  }
+}
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20%;
+  height: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  background: linear-gradient(180deg, #230712, #3c0a13);
+  border: black;
+
+  border-radius: 20px;
+  opacity: 0.7;
+}
+.user,
+.pass {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 4rem;
+  width: 15rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+.login-btn {
+  margin-top: 2rem;
+  width: 5rem;
+  height: 1.7rem;
+  color: aliceblue;
+  background-color: transparent;
+  /* border: 1px; */
+  border: 1px solid rgb(196, 209, 78);
+  box-shadow: 4px 4px 0px 1px rgb(221, 255, 0);
+}
+.login-btn:hover {
+  box-shadow: 4px 4px 0px 1px rgb(255, 255, 255);
+  color: black;
+  background: linear-gradient(black, yellow);
+}
+.login-btn:focus {
+  box-shadow: 4px 4px 0px 1px rgb(26, 25, 25);
+  color: white;
+  background: linear-gradient(yellow);
+}
+
+.inp {
+  background: transparent;
+  opacity: 0.8;
+  color: white;
+  /* border-radius: 20px; */
+  height: 1.5rem;
+  border: 1px solid rgb(196, 209, 78);
+  border-left: yellow;
+  border-top: yellow;
+  border-right: yellow;
+}
+.inp::placeholder {
+  opacity: 1;
+  color: yellow;
+}
+.inp:focus {
+  outline: none;
+  color: white;
+}
+.lbl1,
+.lbl2 {
+  color: transparent;
+}
+.user:hover .lbl1 {
+  color: yellow;
+  transform-style: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+.user:hover .inp::placeholder {
+  color: transparent;
+  transform-style: all;
+  transition-duration: 0.3s;
+}
+.pass:hover .lbl2 {
+  color: yellow;
+  transform-style: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+.pass:hover .inp::placeholder {
+  color: transparent;
+  transform-style: all;
+  transition-duration: 0.3s;
+}
